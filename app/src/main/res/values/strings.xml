@@ -1,0 +1,310 @@
+<resources>
+    <string name="app_name">TAS-IX browser</string>
+    <string name="title_home">Home</string>
+    <string name="title_tools">Bookmarks</string>
+    <string name="title_browser">Browser</string>
+    <string name="title_setting">Settings</string>
+    <string name="title_next">Next</string>
+    <string name="title_back">Back</string>
+    <string name="title_pages">Pages</string>
+    <string name="title_search">Search</string>
+    <string name="title_update">Update</string>
+    <string name="title_notes">Bookmarks</string>
+    <string name="title_history">History</string>
+    <string name="title_add_note">Add to Bookmarks</string>
+    <string name="title_delete_note">Delete Bookmarks</string>
+    <string name="title_clear_history">Clear history</string>
+    <string name="alert_clear_history">Do you want to clear all history?</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_open">Open</string>
+    <string name="history_today">Today</string>
+    <string name="history_week">This week</string>
+    <string name="history_month">This month</string>
+    <string name="note_name">Bookmark name</string>
+    <string name="note_url">Bookmark url</string>
+    <string name="note_add">Add bookmark</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="choose_lang">Choose language</string>
+    <string name="choose_theme">Choose theme</string>
+    <string name="about_app">About application</string>
+    <string name="only_tasix_mode">Only TAS-IX mode</string>
+    <string name="theme_blue">Blue</string>
+    <string name="theme_red">Red</string>
+    <string name="theme_green">Green</string>
+    <string name="theme_black">Black</string>
+    <string name="theme_white">White</string>
+    <string name="theme_brown">Brown</string>
+    <string name="theme_pink">Pink</string>
+    <string name="alert_add_note">Do you want to add this website to bookmarks?</string>
+    <string name="alert_warning">Warning</string>
+    <string name="toastr_empty_text">Bookmark name or URL-address is empty!</string>
+    <string name="toastr_incorrect_url">Incorrect URL-address!</string>
+    <string name="webpage_limit">The limit for opening a new web page is 20. Please delete one of the web pages.</string>
+    <string name="download">Download</string>
+    <string name="alert_download">Do you want to save this file?</string>
+    <string name="file_name">File name:</string>
+    <string name="file_size">File size:</string>
+    <item name="webview" type="id" />
+    <item name="url_key" type="id" />
+    <item name="id_key" type="id" />
+    <string-array name="TasixIpAddresses" id="TasixIpAddresses">
+        <item>5.182.26.0/24</item>
+        <item>31.40.24.0/22</item>
+        <item>31.40.28.0/22</item>
+        <item>31.135.208.0/21</item>
+        <item>31.148.144.0/22</item>
+        <item>31.148.160.0/21</item>
+        <item>31.148.208.0/24</item>
+        <item>31.148.208.0/23</item>
+        <item>31.148.208.0/22</item>
+        <item>31.148.209.0/24</item>
+        <item>31.148.210.0/24</item>
+        <item>31.148.210.0/23</item>
+        <item>31.148.211.0/24</item>
+        <item>31.148.219.0/24</item>
+        <item>31.148.220.0/24</item>
+        <item>37.110.208.0/21</item>
+        <item>45.9.228.0/22</item>
+        <item>45.91.220.0/22</item>
+        <item>45.134.216.0/23</item>
+        <item>45.134.218.0/23</item>
+        <item>45.147.253.0/24</item>
+        <item>45.144.40.0/22</item>
+        <item>46.8.35.0/24</item>
+        <item>46.227.120.0/21</item>
+        <item>46.255.64.0/22</item>
+        <item>46.255.68.0/23</item>
+        <item>46.255.70.0/23</item>
+        <item>62.209.128.0/19</item>
+        <item>80.80.208.0/20</item>
+        <item>81.95.224.0/20</item>
+        <item>82.215.65.0/24</item>
+        <item>82.215.66.0/24</item>
+        <item>82.215.67.0/24</item>
+        <item>82.215.68.0/24</item>
+        <item>82.215.69.0/24</item>
+        <item>82.215.70.0/24</item>
+        <item>82.215.71.0/24</item>
+        <item>82.215.72.0/24</item>
+        <item>82.215.73.0/24</item>
+        <item>82.215.74.0/24</item>
+        <item>82.215.75.0/24</item>
+        <item>82.215.76.0/24</item>
+        <item>82.215.77.0/24</item>
+        <item>82.215.78.0/24</item>
+        <item>82.215.79.0/24</item>
+        <item>82.215.80.0/22</item>
+        <item>82.215.84.0/24</item>
+        <item>82.215.85.0/24</item>
+        <item>82.215.86.0/24</item>
+        <item>82.215.87.0/24</item>
+        <item>82.215.88.0/21</item>
+        <item>82.215.96.0/20</item>
+        <item>82.215.112.0/20</item>
+        <item>83.69.128.0/19</item>
+        <item>83.221.160.0/23</item>
+        <item>83.221.162.0/24</item>
+        <item>83.221.163.0/24</item>
+        <item>83.221.164.0/24</item>
+        <item>83.221.165.0/24</item>
+        <item>83.221.166.0/24</item>
+        <item>83.221.167.0/24</item>
+        <item>83.221.168.0/22</item>
+        <item>83.221.172.0/22</item>
+        <item>83.221.176.0/22</item>
+        <item>83.221.180.0/23</item>
+        <item>83.221.182.0/23</item>
+        <item>83.221.184.0/22</item>
+        <item>83.221.188.0/22</item>
+        <item>84.54.64.0/19</item>
+        <item>84.54.96.0/20</item>
+        <item>84.54.112.0/24</item>
+        <item>84.54.113.0/24</item>
+        <item>84.54.114.0/24</item>
+        <item>84.54.118.0/23</item>
+        <item>84.54.120.0/22</item>
+        <item>85.158.188.0/22</item>
+        <item>87.237.232.0/21</item>
+        <item>87.237.233.14/32</item>
+        <item>89.146.64.0/18</item>
+        <item>89.236.192.0/18</item>
+        <item>89.236.216.0/22</item>
+        <item>91.90.216.0/22</item>
+        <item>91.188.128.0/24</item>
+        <item>91.188.128.0/19</item>
+        <item>91.188.135.0/24</item>
+        <item>91.196.76.0/23</item>
+        <item>91.196.78.0/23</item>
+        <item>91.203.172.0/22</item>
+        <item>91.204.236.0/22</item>
+        <item>91.212.89.0/24</item>
+        <item>91.212.124.0/24</item>
+        <item>91.213.31.0/24</item>
+        <item>91.229.160.0/24</item>
+        <item>91.229.160.0/23</item>
+        <item>91.229.160.0/22</item>
+        <item>91.229.162.0/23</item>
+        <item>91.229.164.0/24</item>
+        <item>91.229.164.0/23</item>
+        <item>91.229.165.0/24</item>
+        <item>91.231.56.0/22</item>
+        <item>91.233.217.0/24</item>
+        <item>91.233.217.128/30</item>
+        <item>91.233.218.0/24</item>
+        <item>91.234.218.0/23</item>
+        <item>91.234.218.48/28</item>
+        <item>91.234.218.64/28</item>
+        <item>91.240.12.0/22</item>
+        <item>92.38.24.0/22</item>
+        <item>92.38.52.0/22</item>
+        <item>92.253.192.0/22</item>
+        <item>92.253.196.0/22</item>
+        <item>93.157.58.0/24</item>
+        <item>93.170.160.0/22</item>
+        <item>93.170.168.0/23</item>
+        <item>93.170.208.0/22</item>
+        <item>93.171.72.0/22</item>
+        <item>93.171.144.0/21</item>
+        <item>93.171.188.0/22</item>
+        <item>93.171.226.0/24</item>
+        <item>93.171.228.0/23</item>
+        <item>94.141.64.0/19</item>
+        <item>94.158.48.0/20</item>
+        <item>94.230.224.0/20</item>
+        <item>94.232.24.0/22</item>
+        <item>95.46.36.0/23</item>
+        <item>95.46.64.0/21</item>
+        <item>95.46.80.0/21</item>
+        <item>95.46.88.0/21</item>
+        <item>95.46.100.0/22</item>
+        <item>95.46.174.0/23</item>
+        <item>95.47.120.0/23</item>
+        <item>95.214.208.0/22</item>
+        <item>109.207.240.0/20</item>
+        <item>109.248.220.0/24</item>
+        <item>109.248.220.0/23</item>
+        <item>109.248.221.0/24</item>
+        <item>146.120.16.0/22</item>
+        <item>146.120.188.0/22</item>
+        <item>146.120.192.0/22</item>
+        <item>146.120.232.0/21</item>
+        <item>146.158.16.0/22</item>
+        <item>146.158.18.0/23</item>
+        <item>146.158.20.0/22</item>
+        <item>146.158.68.0/22</item>
+        <item>178.216.128.0/21</item>
+        <item>178.216.131.0/24</item>
+        <item>178.218.200.0/21</item>
+        <item>185.4.160.0/22</item>
+        <item>185.6.40.0/22</item>
+        <item>185.8.212.0/24</item>
+        <item>185.8.213.0/24</item>
+        <item>185.63.224.0/22</item>
+        <item>185.74.4.0/22</item>
+        <item>185.74.100.0/22</item>
+        <item>185.78.136.0/22</item>
+        <item>185.93.124.0/22</item>
+        <item>185.139.136.0/23</item>
+        <item>185.139.138.0/23</item>
+        <item>185.163.24.0/22</item>
+        <item>185.166.255.0/24</item>
+        <item>185.183.240.0/22</item>
+        <item>185.196.212.0/22</item>
+        <item>185.196.216.0/22</item>
+        <item>185.208.176.0/23</item>
+        <item>185.208.178.0/23</item>
+        <item>185.211.128.0/22</item>
+        <item>185.230.204.0/22</item>
+        <item>185.239.152.0/24</item>
+        <item>185.242.184.0/22</item>
+        <item>185.248.44.0/22</item>
+        <item>188.113.192.0/19</item>
+        <item>188.113.224.0/22</item>
+        <item>188.113.224.253/32</item>
+        <item>188.113.224.254/32</item>
+        <item>188.113.228.0/22</item>
+        <item>188.113.232.0/21</item>
+        <item>188.113.240.0/20</item>
+        <item>188.130.162.0/24</item>
+        <item>188.130.236.0/23</item>
+        <item>188.130.244.0/23</item>
+        <item>192.166.228.0/22</item>
+        <item>193.27.206.0/23</item>
+        <item>193.107.16.0/22</item>
+        <item>194.32.96.0/22</item>
+        <item>194.55.92.0/22</item>
+        <item>195.88.214.0/23</item>
+        <item>195.158.0.0/19</item>
+        <item>195.158.29.128/27</item>
+        <item>195.211.180.0/24</item>
+        <item>195.211.180.0/23</item>
+        <item>195.211.180.0/22</item>
+        <item>195.211.181.0/24</item>
+        <item>195.211.182.0/24</item>
+        <item>195.211.182.0/23</item>
+        <item>195.211.183.0/24</item>
+        <item>212.115.112.0/22</item>
+        <item>213.206.32.0/19</item>
+        <item>213.230.64.0/18</item>
+        <item>213.230.106.112/28</item>
+        <item>217.12.80.0/24</item>
+        <item>217.12.81.0/24</item>
+        <item>217.12.82.0/24</item>
+        <item>217.12.83.0/24</item>
+        <item>217.12.84.0/24</item>
+        <item>217.12.85.0/24</item>
+        <item>217.12.86.0/24</item>
+        <item>217.12.87.0/24</item>
+        <item>217.12.88.0/24</item>
+        <item>217.29.112.0/20</item>
+        <item>217.29.123.64/28</item>
+        <item>217.29.124.204/32</item>
+        <item>217.29.124.208/29</item>
+        <item>217.30.160.0/20</item>
+        <item>217.30.162.0/24</item>
+        <item>217.30.164.0/22</item>
+        <item>217.30.168.0/24</item>
+        <item>217.30.170.0/24</item>
+        <item>217.30.172.0/24</item>
+        <item>217.30.173.0/24</item>
+        <item>217.30.174.0/24</item>
+    </string-array>
+    <string name="title_activity_about_app">About App</string>
+    <string name="rate_app">Rate app</string>
+    <string name="share_app">Share app</string>
+    <string name="about_app_text">This program is the first browser that can only be accessed on TAS-IX sites. Give it a try and rate it!</string>
+    <string name="choose_file">Choose file</string>
+    <string name="send_message">Report an error</string>
+    <string name="title_downloads">Downloads</string>
+    <string name="choose">Choose</string>
+    <string name="download_started">Download started</string>
+    <string name="download_complate">Download complated</string>
+    <string name="print_complete">Print complated</string>
+    <string name="print_failed">Print failed</string>
+    <string name="choose_file_manager">Choose file manager app</string>
+    <string name="share_w_friends">Share</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="lang">Language</string>
+    <string name="theme">Theme</string>
+    <string name="rate_alert_message_1">Did you like the TAS-IX browser?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="rate_alert_message_2">Do you want to support us?</string>
+    <string name="ok_sure">Ok, sure</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="later">Later</string>
+    <string name="not_now">Not now</string>
+    <string name="rate_alert_message_3">Then rate the app positively!</string>
+    <string name="rate">Rate</string>
+    <string name="opinion_about_app">Your opinion about app</string>
+    <string name="download_error">An error occurred while downloading!</string>
+    <string name="search_hint">Search</string>
+    <string name="_1_usd" translatable="false">1 USD</string>
+    <string name="_1_rub" translatable="false">1 RUB</string>
+    <string name="_1_eur" translatable="false">1 EUR</string>
+    <string name="sum">sum</string>
+    <string name="telegram_channel">Telegram channel</string>
+    <string name="app_news">Application news and TAS-IX resources</string>
+</resources>

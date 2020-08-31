@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_note"
+        style="@style/CardView.Note"
+        android:layout_margin="5dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            style="@style/Horizontal.LinearLayout"
+            android:padding="10dp">
+            <CheckBox
+                android:id="@+id/cardview_note_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/cardview_note_layout"
+                style="@style/Vertical.LinearLayout"
+                android:layout_width="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/cardview_note_title"
+                    style="@style/TextView.Title" />
+
+                <TextView
+                    android:id="@+id/cardview_note_url"
+                    style="@style/TextView.Url" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

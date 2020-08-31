@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "727874683883",
+    "firebase_url": "https://tas-ix-browser.firebaseio.com",
+    "project_id": "tas-ix-browser",
+    "storage_bucket": "tas-ix-browser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727874683883:android:002970c63339a5641ecfae",
+        "android_client_info": {
+          "package_name": "com.ARCompany.Tas_ixBrowser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727874683883-bapcuvihpjpcpt73frf3qoqrtha991kk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ARCompany.Tas_ixBrowser",
+            "certificate_hash": "c1fb2c2e0d0c8cec6f7aa008ec4d7585ed5d30c8"
+          }
+        },
+        {
+          "client_id": "727874683883-o2n0mbrdllk8dt7phj4et67293tvs8h1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn-972JaN6t-oEmHOs9-pnmu5XM0euWWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727874683883-o2n0mbrdllk8dt7phj4et67293tvs8h1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

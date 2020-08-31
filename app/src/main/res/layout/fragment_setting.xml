@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            style="@style/Toolbar.Browser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:subtitleTextColor="@color/textColor"
+            app:title="@string/title_setting"
+            app:titleTextColor="@color/textColor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/setting_lang_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextView.Title"
+                        android:text="@string/lang" />
+
+                    <TextView
+                        android:id="@+id/setting_lang_text"
+                        style="@style/TextView.Url" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/setting_lang_icon"
+                    style="@style/ImageView.Icon" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/textColor" />
+
+            <LinearLayout
+                android:id="@+id/setting_theme_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextView.Title"
+                        android:text="@string/theme" />
+
+                    <TextView
+                        android:id="@+id/setting_theme_text"
+                        style="@style/TextView.Url" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/setting_theme_icon"
+                    style="@style/ImageView.Icon" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/textColor" />
+
+            <LinearLayout
+                android:id="@+id/setting_onlyTasix_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextView.Title"
+                        android:text="@string/only_tasix_mode" />
+                    <TextView
+                        android:id="@+id/setting_onlyTasix_text"
+                        style="@style/TextView.Url" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/setting_onlyTasix_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/textColor" />
+            <LinearLayout
+                android:id="@+id/setting_telegram_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextView.Title"
+                        android:text="@string/telegram_channel" />
+                    <TextView
+                        android:text="@string/app_news"
+                        style="@style/TextView.Url"
+                        android:maxLines="2"/>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/setting_telegram_icon"
+                    style="@style/ImageView.Icon" />
+            </LinearLayout>
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/textColor" />
+
+            <LinearLayout
+                android:id="@+id/setting_about_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextView.Title"
+                    android:layout_width="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:text="@string/about_app" />
+
+                <ImageView
+                    android:id="@+id/setting_about_icon"
+                    style="@style/ImageView.Icon" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

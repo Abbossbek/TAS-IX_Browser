@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchView style="@style/SearchView.Dark"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
