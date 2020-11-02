@@ -8,9 +8,9 @@
         style="@style/CardView.Note"
         android:layout_margin="5dp"
         android:padding="10dp">
-
         <LinearLayout
             style="@style/Horizontal.LinearLayout"
+            android:background="@drawable/trans_background_with_border"
             android:padding="10dp">
             <CheckBox
                 android:id="@+id/cardview_note_check"

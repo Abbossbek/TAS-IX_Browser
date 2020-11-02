@@ -77,12 +77,11 @@
         <item name="cardElevation">5dp</item>
     </style>
 
-    <style name="CardView.Note" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="CardView.Note" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">10dp</item>
         <item name="android:padding">10dp</item>
-        <item name="cardBackgroundColor">?attr/colorBackgroundFloating</item>
         <item name="cardCornerRadius">10dp</item>
         <item name="cardElevation">5dp</item>
     </style>

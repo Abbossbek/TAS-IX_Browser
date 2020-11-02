@@ -5,6 +5,14 @@ import android.content.Context;
 
 import com.ARCompany.Tas_ixBrowser.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ModelIP {
     private Context context;
@@ -12,18 +20,26 @@ public class ModelIP {
     public ModelIP(Context context){
         this.context = context;
     }
-    public boolean IsInTasix(String ip){
+    public boolean IsInTasix(String ip) throws IOException {
 
-        String fullIpInBase2=ipToBase2(ip);
+        String fullIpInBase2 = ipToBase2(ip);
 
-        String[] tasixIpAddresses = context.getResources().getStringArray( R.array.TasixIpAddresses);
+        StringBuilder sb = new StringBuilder();
+        InputStream is = context.getAssets().open("Files/all");
+        BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+        List<String> tasixIpAddresses = new ArrayList<>();   //context.getResources().getStringArray( R.array.TasixIpAddresses);
+        String str;
+        while ((str = br.readLine()) != null) {
+            tasixIpAddresses.add(str);
+        }
+        br.close();
 
-        for (String item: tasixIpAddresses) {
+        for (String item : tasixIpAddresses) {
             String[] itemParts = item.split("/");
-            String itemIpInBase2=ipToBase2(itemParts[0]);
-            int itemIpLength=Integer.parseInt(itemParts[1]);
-            if(fullIpInBase2.substring(0,itemIpLength)
-                    .equals(itemIpInBase2.substring(0,itemIpLength))){
+            String itemIpInBase2 = ipToBase2(itemParts[0]);
+            int itemIpLength = Integer.parseInt(itemParts[1]);
+            if (fullIpInBase2.substring(0, itemIpLength)
+                    .equals(itemIpInBase2.substring(0, itemIpLength))) {
                 return true;
             }
         }

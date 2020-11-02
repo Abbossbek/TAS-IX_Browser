@@ -170,7 +170,7 @@ public class HomeFragment extends Fragment {
 
     private void setValues(final View root) {
 
-        String[] sites = new String[]{"Islom", "Odam", "AllPlay", "Kinohit", "Kun", "Lex", "Borku", "Ziyonet", "MyTube", "TopMusic", "Olx", "Tribuna"};
+        String[] sites = new String[]{"Islom", "Muslim", "AllPlay", "Kinohit", "Mover", "LoveMusic", "OnlineTV", "Vimo", "Kun", "Lex", "Borku", "Ziyonet", "MyTube", "TopMusic", "Olx", "Tribuna"};
 
         GridLayout gridSites = (GridLayout) root.findViewById(R.id.grid_sites);
 

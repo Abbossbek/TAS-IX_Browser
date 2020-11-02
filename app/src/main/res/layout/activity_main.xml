@@ -12,7 +12,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="48dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,16 +22,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.446"
         app:navGraph="@navigation/mobile_navigation" />
-
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="-10dp"
+    android:layout_gravity="bottom"
+    app:cardBackgroundColor="?attr/colorPrimary">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shadow">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:layout_gravity="fill"
+        android:background="#44FFFFFF"
         app:behavior_peekHeight="55dp"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:menu="@menu/bottom_nav_menu" />
-
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

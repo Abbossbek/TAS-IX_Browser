@@ -466,13 +466,13 @@ public class BrowserFragment extends Fragment {
                             coordinateY = scrollY;
                         } else {
                             RelativeLayout relativeLayout = root.findViewById(R.id.relative_layout_browser);
-                            AppBarLayout appBarLayout = root.findViewById(R.id.action_bar_browser);
+                            CardView cardView = root.findViewById(R.id.browser_action_bar_cardview);
                             scrollStarted = false;
                             if (scrollY > coordinateY) {
                                 bsbMenu.setState(BottomSheetBehavior.STATE_COLLAPSED);
                                 Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.action_bar_close);
                                 animation.setAnimationListener(new Animation.AnimationListener() {
-                                    AppBarLayout appBarLayout = root.findViewById(R.id.action_bar_browser);
+                                    CardView cardView = root.findViewById(R.id.browser_action_bar_cardview);
 
                                     @Override
                                     public void onAnimationStart(Animation animation) {
@@ -482,7 +482,7 @@ public class BrowserFragment extends Fragment {
                                                 @Override
                                                 protected void applyTransformation(float interpolatedTime, Transformation t) {
                                                     RelativeLayout relativeLayout = root.findViewById(R.id.relative_layout_browser);
-                                                    relativeLayout.setPadding(0, (int) ((70 * scale + 0.5f) * (1 - interpolatedTime)), 0, 0);
+                                                    relativeLayout.setPadding(0, (int) ((60 * scale + 0.5f) * (1 - interpolatedTime)), 0, 0);
                                                 }
                                             };
                                             a.setDuration(300);
@@ -492,7 +492,7 @@ public class BrowserFragment extends Fragment {
 
                                     @Override
                                     public void onAnimationEnd(Animation animation) {
-                                        appBarLayout.setVisibility(GONE);
+                                        cardView.setVisibility(GONE);
                                     }
 
                                     @Override
@@ -500,8 +500,8 @@ public class BrowserFragment extends Fragment {
 
                                     }
                                 });
-                                if (appBarLayout.getVisibility() == VISIBLE)
-                                    appBarLayout.startAnimation(animation);
+                                if (cardView.getVisibility() == VISIBLE)
+                                    cardView.startAnimation(animation);
                             } else if (scrollY < coordinateY) {
                                 bsbMenu.setState(BottomSheetBehavior.STATE_EXPANDED);
                                 Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.action_bar_open);
@@ -511,19 +511,19 @@ public class BrowserFragment extends Fragment {
                                         @Override
                                         protected void applyTransformation(float interpolatedTime, Transformation t) {
                                             RelativeLayout relativeLayout = root.findViewById(R.id.relative_layout_browser);
-                                            relativeLayout.setPadding(0, (int) ((70 * scale + 0.5f) * interpolatedTime), 0, 0);
+                                            relativeLayout.setPadding(0, (int) ((60 * scale + 0.5f) * interpolatedTime), 0, 0);
                                         }
                                     };
                                     a.setDuration(300);
                                     relativeLayout.startAnimation(a);
                                 }
                                 animation.setAnimationListener(new Animation.AnimationListener() {
-                                    AppBarLayout appBarLayout = root.findViewById(R.id.action_bar_browser);
+                                    CardView cardView = root.findViewById(R.id.browser_action_bar_cardview);
 
                                     @Override
                                     public void onAnimationStart(Animation animation) {
 
-                                        appBarLayout.setVisibility(VISIBLE);
+                                        cardView.setVisibility(VISIBLE);
                                     }
 
                                     @Override
@@ -535,8 +535,8 @@ public class BrowserFragment extends Fragment {
 
                                     }
                                 });
-                                if (appBarLayout.getVisibility() == GONE)
-                                    appBarLayout.startAnimation(animation);
+                                if (cardView.getVisibility() == GONE)
+                                    cardView.startAnimation(animation);
                             } else {
                                 if(scrollY!=0) {
                                     bsbMenu.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -550,14 +550,14 @@ public class BrowserFragment extends Fragment {
                                         @Override
                                         protected void applyTransformation(float interpolatedTime, Transformation t) {
                                             RelativeLayout relativeLayout = root.findViewById(R.id.relative_layout_browser);
-                                            relativeLayout.setPadding(0, (int) ((70 * scale + 0.5f) * interpolatedTime), 0, 0);
+                                            relativeLayout.setPadding(0, (int) ((60 * scale + 0.5f) * interpolatedTime), 0, 0);
                                         }
                                     };
                                     a.setDuration(300);
                                     relativeLayout.startAnimation(a);
                                 }
                                 animation.setAnimationListener(new Animation.AnimationListener() {
-                                    AppBarLayout appBarLayout = root.findViewById(R.id.action_bar_browser);
+                                    CardView cardView = root.findViewById(R.id.browser_action_bar_cardview);
 
                                     @Override
                                     public void onAnimationStart(Animation animation) {
@@ -565,7 +565,7 @@ public class BrowserFragment extends Fragment {
 
                                     @Override
                                     public void onAnimationEnd(Animation animation) {
-                                        appBarLayout.setVisibility(VISIBLE);
+                                        cardView.setVisibility(VISIBLE);
                                     }
 
                                     @Override
@@ -573,8 +573,8 @@ public class BrowserFragment extends Fragment {
 
                                     }
                                 });
-                                if (appBarLayout.getVisibility() == GONE)
-                                    appBarLayout.startAnimation(animation);
+                                if (cardView.getVisibility() == GONE)
+                                    cardView.startAnimation(animation);
                             }
                         }
                     }

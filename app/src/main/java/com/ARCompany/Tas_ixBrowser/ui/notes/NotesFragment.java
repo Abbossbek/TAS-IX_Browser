@@ -24,6 +24,7 @@ import android.webkit.URLUtil;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -200,8 +201,11 @@ public class NotesFragment extends Fragment {
 
         ImageView iconAdd = layoutAdd.findViewById(R.id.home_site_icon);
         iconAdd.setImageDrawable(getContext().getDrawable(R.drawable.ic_add_white_24dp));
-        iconAdd.getLayoutParams().height=140;
-        iconAdd.getLayoutParams().width=140;
+
+        float density = getResources().getDisplayMetrics().density;
+
+        iconAdd.getLayoutParams().height=(int)(45*density);
+        iconAdd.getLayoutParams().width=(int)(45*density);
         iconAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -257,8 +261,8 @@ public class NotesFragment extends Fragment {
         layoutDelete.setLayoutParams(paramsDelete);
 
         ImageView iconDelete = layoutDelete.findViewById(R.id.home_site_icon);
-        iconDelete.getLayoutParams().height=140;
-        iconDelete.getLayoutParams().width=140;
+        iconDelete.getLayoutParams().height=(int)(45*density);
+        iconDelete.getLayoutParams().width=(int)(45*density);
         iconDelete.setImageDrawable(getContext().getDrawable(R.drawable.ic_delete_white_24dp));
         iconDelete.setOnClickListener(new View.OnClickListener() {
             @Override

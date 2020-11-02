@@ -116,8 +116,12 @@ public class HistoryFragment extends Fragment {
         layoutClear.setLayoutParams(paramsDelete);
 
         ImageView iconClear = layoutClear.findViewById(R.id.home_site_icon);
-        iconClear.getLayoutParams().height=140;
-        iconClear.getLayoutParams().width=140; iconClear.setImageDrawable(getContext().getDrawable(R.drawable.ic_clear_all_black_24dp));
+
+        float density = getResources().getDisplayMetrics().density;
+
+        iconClear.getLayoutParams().height=(int)(45*density);
+        iconClear.getLayoutParams().width=(int)(45*density);
+        iconClear.setImageDrawable(getContext().getDrawable(R.drawable.ic_clear_all_black_24dp));
         iconClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

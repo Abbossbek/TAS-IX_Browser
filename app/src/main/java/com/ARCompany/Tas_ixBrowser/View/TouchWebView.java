@@ -35,7 +35,7 @@ public class TouchWebView extends WebView {
             return super.onTouchEvent(event);
         }
 
-        if (event.getPointerCount() >= 2) {
+        if (event.getPointerCount() >= 1) {
             requestDisallowInterceptTouchEvent(true);
         } else {
             requestDisallowInterceptTouchEvent(true);

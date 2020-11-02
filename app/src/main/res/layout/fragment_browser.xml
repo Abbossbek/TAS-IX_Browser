@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
 
         <RelativeLayout
             android:id="@+id/relative_layout_browser"
-            android:paddingTop="70dp"
+            android:paddingTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
@@ -66,7 +67,7 @@
         android:layout_height="match_parent"
         android:background="#00000000"
         android:padding="5dp"
-        android:paddingTop="70dp"
+        android:paddingTop="60dp"
         app:behavior_peekHeight="0dp"
         app:layout_behavior=".View.LockableBottomSheetBehavior">
 
@@ -75,42 +76,35 @@
             android:id="@+id/pagesList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="60dp"
             android:orientation="vertical"
-            android:paddingBottom="70dp">
+            android:paddingBottom="60dp">
 
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.appbar.AppBarLayout
+<androidx.cardview.widget.CardView
+    android:id="@+id/browser_action_bar_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginTop="-10dp"
+    app:cardBackgroundColor="#00FFFFFF"
+    app:cardCornerRadius="10dp">
+    <LinearLayout
         android:id="@+id/action_bar_browser"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@android:color/transparent"
-        app:elevation="0dp">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:padding="10dp"
-            app:cardBackgroundColor="@color/textColor"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="5dp">
+        android:layout_height="match_parent"
+        android:background="@drawable/trans_background_with_border">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tool_bar_browser"
                 style="@style/Toolbar.Browser"
+                android:layout_gravity="bottom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorBackgroundFloating"
-                app:subtitleTextColor="@color/textColor"
+                android:background="#33FFFFFF"
+                android:layout_height="60dp"
                 app:titleTextColor="@color/textColor" />
-        </androidx.cardview.widget.CardView>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    </LinearLayout>
+</androidx.cardview.widget.CardView>    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/browser_bottom_menu"
         style="@style/BottomNavigationView.Main"
         android:layout_height="55dp"

@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff008000</color>
-    <color name="colorPrimaryDark">#ff008000</color>
+    <color name="colorPrimary">#ff006000</color>
+    <color name="colorPrimaryDark">#ff006000</color>
     <color name="colorAccent">#000000</color>
-    <color name="colorCardView">#BB008000</color>
+    <color name="colorCardView">#BB006000</color>
     <color name="textColor">#FFFFFFFF</color>
-    <color name="green">#ff008000</color>
+    <color name="green">#ff006000</color>
     <color name="blue">#ff0000a0</color>
     <color name="colorCardViewBlue">#BB0000a0</color>>
     <color name="black">#ff000000</color>
     <color name="colorCardViewBlack">#BB000000</color>>
     <color name="white">#ffffffff</color>
     <color name="colorCardViewWhite">#BBffffff</color>
-    <color name="red">#ffff0000</color>
-    <color name="colorCardViewRed">#BBff0000</color>
-    <color name="brown">#ffb97a56</color>
+    <color name="red">#ff990000</color>
+    <color name="colorCardViewRed">#BB990000</color>
+    <color name="brown">#ffb97a44</color>
     <color name="colorCardViewBrown">#BBb97a56</color>
     <color name="pink">#ffb83dba</color>
     <color name="colorCardViewPink">#BBb83dba</color>
-
     <color name="black_overlay">#66000000</color>
 </resources>
