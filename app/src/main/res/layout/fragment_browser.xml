@@ -104,7 +104,8 @@
                 android:layout_height="60dp"
                 app:titleTextColor="@color/textColor" />
     </LinearLayout>
-</androidx.cardview.widget.CardView>    <com.google.android.material.bottomnavigation.BottomNavigationView
+</androidx.cardview.widget.CardView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/browser_bottom_menu"
         style="@style/BottomNavigationView.Main"
         android:layout_height="55dp"

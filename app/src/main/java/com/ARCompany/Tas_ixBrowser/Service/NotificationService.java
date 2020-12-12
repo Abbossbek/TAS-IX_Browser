@@ -27,7 +27,7 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class NotificationService extends FirebaseMessagingService {
     private static final int NOTIFICATION_ID = 17;
-    private static final String CHANNEL_ID = "my_channel";
+    private static final String CHANNEL_ID = "asda";
 
     public NotificationService() {
     }

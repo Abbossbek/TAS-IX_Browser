@@ -13,8 +13,8 @@ android {
         applicationId "com.ARCompany.Tas_ixBrowser"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 50
-        versionName '2.1.6'
+        versionCode 51
+        versionName '2.1.7'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

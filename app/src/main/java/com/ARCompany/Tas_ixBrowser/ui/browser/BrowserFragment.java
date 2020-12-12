@@ -23,6 +23,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintJob;
@@ -138,7 +140,9 @@ public class BrowserFragment extends Fragment {
     private boolean queryMaybeUrl = false;
     private boolean scrollStarted = false;
     private int coordinateY = 0;
+    private Handler adHandler;
 
+    @SuppressLint("HandlerLeak")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,6 +151,20 @@ public class BrowserFragment extends Fragment {
                 PermissionChecker.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PermissionChecker.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
+        adHandler = new Handler() {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                if (adView != null)
+                    adView.loadAd();
+            }
+        };
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        adView=null;
+        super.onDestroyView();
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -394,14 +412,12 @@ public class BrowserFragment extends Fragment {
                                      AdListener() {
                                          @Override
                                          public void onError(Ad ad, AdError adError) {
-                                             if (adError.getErrorCode() != 1001) {
-                                                 adView.loadAd();
-                                             }
+                                                 adHandler.sendEmptyMessageDelayed(1, 15000);
                                          }
 
                                          @Override
                                          public void onAdLoaded(Ad ad) {
-                                             layoutAd.setVisibility(VISIBLE);
+                                             adHandler.sendEmptyMessageDelayed(1, 15000);
                                              imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_up_black_24dp);
                                          }
 

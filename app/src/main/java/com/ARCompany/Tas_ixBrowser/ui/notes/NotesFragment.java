@@ -17,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,11 +57,13 @@ public class NotesFragment extends Fragment {
     private final String SETTING = "setting";
     private SharedPreferences preferences;
     private boolean hasRateAlertOpened;
+    private Handler adHandler;
 
     public static NotesFragment newInstance() {
         return new NotesFragment();
     }
 
+    @SuppressLint("HandlerLeak")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -68,7 +72,20 @@ public class NotesFragment extends Fragment {
         preferences = getContext().getSharedPreferences(SETTING, Context.MODE_PRIVATE);
         setValues(root);
 
+        adHandler = new Handler() {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                if (adView != null)
+                    adView.loadAd();
+            }
+        };
         return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        adView=null;
+        super.onDestroyView();
     }
 
     private void setValues(View root) {
@@ -93,14 +110,15 @@ public class NotesFragment extends Fragment {
         adView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                if(adError.getErrorCode()!=1001) {
-                    adView.loadAd();
-                }
+
+                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                layoutAd.setVisibility(View.VISIBLE);
+//                layoutAd.setVisibility(View.VISIBLE);
+
+                adHandler.sendEmptyMessageDelayed(1, 15000);
                 imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
                 int openCount=preferences.getInt("openCount", 0);
                 if(openCount>50) {
@@ -191,9 +209,11 @@ public class NotesFragment extends Fragment {
 
         GridLayout grid = (GridLayout) root.findViewById(R.id.notes_grid);
 
+        float density = getResources().getDisplayMetrics().density;
+
         LinearLayout layoutAdd = (LinearLayout) getLayoutInflater().inflate(R.layout.layout_site_icon, null);
         CardView cardViewAdd=layoutAdd.findViewById(R.id.cardview_site_icon);
-        cardViewAdd.setRadius(50f);
+        cardViewAdd.setRadius((int)(20*density));
         GridLayout.LayoutParams paramsAdd = new GridLayout.LayoutParams();
         paramsAdd.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, GridLayout.FILL, 1f);
         paramsAdd.width = 0;
@@ -201,8 +221,6 @@ public class NotesFragment extends Fragment {
 
         ImageView iconAdd = layoutAdd.findViewById(R.id.home_site_icon);
         iconAdd.setImageDrawable(getContext().getDrawable(R.drawable.ic_add_white_24dp));
-
-        float density = getResources().getDisplayMetrics().density;
 
         iconAdd.getLayoutParams().height=(int)(45*density);
         iconAdd.getLayoutParams().width=(int)(45*density);

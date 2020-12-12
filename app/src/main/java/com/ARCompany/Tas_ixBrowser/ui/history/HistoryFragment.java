@@ -3,6 +3,7 @@ package com.ARCompany.Tas_ixBrowser.ui.history;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,11 +46,13 @@ public class HistoryFragment extends Fragment {
     private ImageView imgCloseAd;
     private LinearLayout layoutAd;
     private AdView adView;
+    private Handler adHandler;
 
     public static HistoryFragment newInstance() {
         return new HistoryFragment();
     }
 
+    @SuppressLint("HandlerLeak")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -55,7 +60,20 @@ public class HistoryFragment extends Fragment {
 
         setValues(root);
 
+        adHandler = new Handler() {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                if (adView != null)
+                    adView.loadAd();
+            }
+        };
         return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        adView=null;
+        super.onDestroyView();
     }
 
     private void setValues(View root) {
@@ -80,14 +98,12 @@ public class HistoryFragment extends Fragment {
         adView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                if(adError.getErrorCode()!=1001) {
-                    adView.loadAd();
-                }
+                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                layoutAd.setVisibility(View.VISIBLE);
+                adHandler.sendEmptyMessageDelayed(1, 15000);
                 imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
             }
 
@@ -107,17 +123,17 @@ public class HistoryFragment extends Fragment {
 
         GridLayout grid = (GridLayout) root.findViewById(R.id.history_grid);
 
+        float density = getResources().getDisplayMetrics().density;
+
         LinearLayout layoutClear = (LinearLayout) getLayoutInflater().inflate(R.layout.layout_site_icon, null);
         CardView cardViewClear=layoutClear.findViewById(R.id.cardview_site_icon);
-        cardViewClear.setRadius(50f);
+        cardViewClear.setRadius((int)(20*density));
         GridLayout.LayoutParams paramsDelete = new GridLayout.LayoutParams();
         paramsDelete.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, GridLayout.FILL, 1f);
         paramsDelete.width = 0;
         layoutClear.setLayoutParams(paramsDelete);
 
         ImageView iconClear = layoutClear.findViewById(R.id.home_site_icon);
-
-        float density = getResources().getDisplayMetrics().density;
 
         iconClear.getLayoutParams().height=(int)(45*density);
         iconClear.getLayoutParams().width=(int)(45*density);

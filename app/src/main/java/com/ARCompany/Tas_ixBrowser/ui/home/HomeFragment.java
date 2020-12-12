@@ -9,6 +9,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +55,9 @@ public class HomeFragment extends Fragment {
     private AdView adView;
     private SharedPreferences preferences;
     private final String SETTING = "setting";
+    private Handler adHandler;
 
+    @SuppressLint("HandlerLeak")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
@@ -63,6 +67,14 @@ public class HomeFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_home, container, false);
         new RetrieveJson().execute("https://nbu.uz/uz/exchange-rates/json/");
         setValues(root);
+
+        adHandler = new Handler() {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                if (adView != null)
+                    adView.loadAd();
+            }
+        };
         return root;
     }
 
@@ -236,15 +248,12 @@ public class HomeFragment extends Fragment {
         adView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                if (adError.getErrorCode() != 1001) {
-                    adView.loadAd();
-                }
+                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-
-
+                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
