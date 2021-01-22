@@ -272,7 +272,7 @@ public class NotesFragment extends Fragment {
 
         LinearLayout layoutDelete = (LinearLayout) getLayoutInflater().inflate(R.layout.layout_site_icon, null);
         CardView cardViewDelete=layoutDelete.findViewById(R.id.cardview_site_icon);
-        cardViewDelete.setRadius(50f);
+        cardViewDelete.setRadius(20*density);
         GridLayout.LayoutParams paramsDelete = new GridLayout.LayoutParams();
         paramsDelete.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, GridLayout.FILL, 1f);
         paramsDelete.width = 0;

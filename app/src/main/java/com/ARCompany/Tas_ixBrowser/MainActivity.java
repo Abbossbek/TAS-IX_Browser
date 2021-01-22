@@ -39,8 +39,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferences = this.getSharedPreferences(SETTING, Context.MODE_PRIVATE);
-        switch (preferences.getString("theme", "green")) {
-            case "black":
+            switch (preferences.getString("theme", "green")) {
+                case "black":
                 setTheme(R.style.AppTheme_Black);
                 break;
             case "green":
