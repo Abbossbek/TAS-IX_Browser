@@ -111,14 +111,13 @@ public class NotesFragment extends Fragment {
             @Override
             public void onError(Ad ad, AdError adError) {
 
-                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
 //                layoutAd.setVisibility(View.VISIBLE);
 
-                adHandler.sendEmptyMessageDelayed(1, 15000);
+                adHandler.sendEmptyMessageDelayed(1, 60000);
                 imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
                 int openCount=preferences.getInt("openCount", 0);
                 if(openCount>50) {

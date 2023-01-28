@@ -248,12 +248,11 @@ public class HomeFragment extends Fragment {
         adView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                adHandler.sendEmptyMessageDelayed(1, 15000);
+                adHandler.sendEmptyMessageDelayed(1, 60000);
             }
 
             @Override

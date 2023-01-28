@@ -98,12 +98,11 @@ public class HistoryFragment extends Fragment {
         adView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                adHandler.sendEmptyMessageDelayed(1, 15000);
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                adHandler.sendEmptyMessageDelayed(1, 15000);
+                adHandler.sendEmptyMessageDelayed(1, 60000);
                 imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
             }
 

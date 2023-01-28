@@ -375,6 +375,7 @@ public class BrowserFragment extends Fragment {
         bsbPages.setState(BottomSheetBehavior.STATE_HIDDEN);
         bsbMenu = BottomSheetBehavior.from(root.findViewById(R.id.browser_bottom_menu));
         bsbMenu.setState(BottomSheetBehavior.STATE_EXPANDED);
+
         preferences = getContext().getSharedPreferences(SETTING, Context.MODE_PRIVATE);
 
         pageDBHelper = new
@@ -412,12 +413,11 @@ public class BrowserFragment extends Fragment {
                                      AdListener() {
                                          @Override
                                          public void onError(Ad ad, AdError adError) {
-                                                 adHandler.sendEmptyMessageDelayed(1, 15000);
                                          }
 
                                          @Override
                                          public void onAdLoaded(Ad ad) {
-                                             adHandler.sendEmptyMessageDelayed(1, 15000);
+                                             adHandler.sendEmptyMessageDelayed(1, 60000);
                                              imgCloseAd.setImageResource(R.drawable.ic_keyboard_arrow_up_black_24dp);
                                          }
 
